@@ -1,13 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import { View, StyleSheet,Text } from "react-native";
 
-const ViewStyleProps = () => {
+const App = () => {
+
+const [focusSubject, setFocusSubject]=useState("Reading");
+
     return (
       <View style={styles.container}>
-        <Text> hello Mike</Text>
+        {focusSubject
+        ?(<Text>I have a subject,need build a timer</Text>)
+        :(<Text>I don't have a subject</Text>)}
       </View>
     );
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -16,4 +24,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default ViewStyleProps;
+export default App;
