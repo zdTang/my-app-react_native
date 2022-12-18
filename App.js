@@ -1,22 +1,42 @@
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={[styles.container, {
-      // Try setting `flexDirection` to `"row"`.
-      flexDirection: "column"
-    }]}>
-      <View style={{ flex: 1, backgroundColor: "red" }} />
-      <View style={{ flex: 2, backgroundColor: "darkorange" }} />
-      <View style={{ flex: 3, backgroundColor: "green" }} />
-    </View>
-
-  );
-}
+import React from 'react';
+import { View, Image, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    paddingTop: 50,
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  logo: {
+    width: 66,
+    height: 58,
   },
 });
+
+const DisplayAnImage = () => {
+  return (
+    <View style={styles.container}>
+      <Image
+        style={styles.tinyLogo}
+        source={require('./assets/icon.png')}
+      />
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: 'https://reactnative.dev/img/tiny_logo.png',
+        }}
+      />
+      <Image
+        style={styles.logo}
+        source={{
+          uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+        }}
+      />
+    </View>
+  );
+}
+
+export default DisplayAnImage;
