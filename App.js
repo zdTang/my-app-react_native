@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { View, StyleSheet,Text } from "react-native";
-import Focus from "./src/features/Focus"
+import {Focus} from "./src/features/Focus"
 const App = () => {
 
 const [focusSubject, setFocusSubject]=useState("Reading");
