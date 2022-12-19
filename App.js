@@ -5,9 +5,14 @@ const App = () => {
 
 const [focusSubject, setFocusSubject]=useState("Reading");
 
-    return (focusSubject
-      ?<Focus/>
-      :<View ><Text style={styles.container}>I don't have a subject</Text></View>
+// Be aware of the {JSX}, cannot put variables between elements directly!!!
+    return (
+      <View style={styles.container}>
+        {focusSubject  
+        ?(<Focus/>)
+        :(<View ><Text style={styles.container}>I don't have a subject</Text></View>)}
+      </View>
+      
     );
 }
 
@@ -17,7 +22,7 @@ const [focusSubject, setFocusSubject]=useState("Reading");
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    padding:50
+    backgroundColor:"blue"
   },
   
 });
